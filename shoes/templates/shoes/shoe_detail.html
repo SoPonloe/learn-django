@@ -1,0 +1,21 @@
+{% extends "shoes/index.html" %}
+
+{% block title %}
+    All shoes
+{% endblock %}
+
+{% block content %}
+<h1>Total = {{total_shoes}}</h1>
+    <ul>
+        {% for shoe in shoes%}
+        <li>
+            {{shoe.brand}} - {{shoe.name}} - $ {{shoe.price}}
+            {% if shoe.in_stock %}
+            In stock
+            {% else %}
+            Out of stock
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
